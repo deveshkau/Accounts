@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="s_anchorpane" prefHeight="500.0" prefWidth="700.0" stylesheets="@../Dashboard/Dashboard.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Search.SearchController">
+   <children>
+      <VBox fx:id="s_1vbox" prefHeight="30.0" prefWidth="700.0">
+         <children>
+            <Separator prefHeight="0.0" prefWidth="700.0" />
+            <HBox fx:id="s_1hbox" prefHeight="30.0" prefWidth="700.0" style="-fx-background-color: #808080;">
+               <children>
+                  <Label prefHeight="30.0" text="SEARCH BY:" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField prefHeight="30.0" promptText="following choice" style="-fx-background-color: #808080;">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField layoutX="172.0" layoutY="10.0" prefHeight="30.0" promptText="Enter Your Prefrences" style="-fx-background-color: #ffffff;">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="40.0" top="2.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <JFXButton text="Search" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="SEARCH" size="20.0" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <Separator prefHeight="0.0" prefWidth="700.0" />
+         </children>
+      </VBox>
+      <HBox fx:id="s_2hbox" layoutY="41.0" prefHeight="35.0" prefWidth="700.0" style="-fx-background-color: #808080; ">
+         <children>
+            <JFXButton fx:id="s_loadtable" onAction="#click_loadtable" prefHeight="35.0" text="LoadTable" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="s_regno" layoutX="10.0" layoutY="10.0" onAction="#click_regno" prefHeight="35.0" text="Reg no." textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="s_name" layoutX="44.0" layoutY="10.0" onAction="#click_name" prefHeight="35.0" text="Name" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="s_batch" layoutX="115.0" layoutY="10.0" onAction="#click_batch" prefHeight="35.0" text="Batch" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="s_year" layoutX="174.0" layoutY="10.0" onAction="#click_year" prefHeight="35.0" text="Year" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="s_semester" layoutX="233.0" layoutY="10.0" onAction="#click_semester" prefHeight="35.0" text="Semester" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="s_remark" layoutX="284.0" layoutY="10.0" onAction="#click_remark" prefHeight="35.0" text="Remark" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
+            </JFXButton>
+         </children>
+      </HBox>
+      <VBox fx:id="s_2vbox" layoutY="76.0" prefHeight="426.0" prefWidth="700.0">
+         <children>
+            <Separator prefWidth="200.0" />
+            <ScrollPane prefHeight="423.0" prefWidth="700.0">
+               <content>
+                  <TableView fx:id="s_tableview">
+                    <columns>
+                      <TableColumn fx:id="id" prefWidth="75.0" text="ID" />
+                      <TableColumn fx:id="name" prefWidth="75.0" text="Name" />
+                        <TableColumn fx:id="regno" prefWidth="75.0" text="Regno." />
+                        <TableColumn fx:id="rollno" prefWidth="75.0" text="Rollno." />
+                        <TableColumn fx:id="semester" prefWidth="75.0" text="Semester" />
+                        <TableColumn fx:id="batch" prefWidth="75.0" text="Batch" />
+                        <TableColumn fx:id="year" prefWidth="75.0" text="Year" />
+                        <TableColumn fx:id="parentname" prefWidth="75.0" text="ParentName" />
+                        <TableColumn fx:id="parentmob" prefWidth="75.0" text="ParentMob." />
+                        <TableColumn fx:id="studentmob" prefWidth="75.0" text="StudentMob." />
+                        <TableColumn fx:id="studentemail" prefWidth="75.0" text="StudentEmail" />
+                        <TableColumn fx:id="address" prefWidth="75.0" text="Address" />
+                        <TableColumn fx:id="collagefee" prefWidth="75.0" text="CollageFee" />
+                        <TableColumn fx:id="hostelfee" prefWidth="75.0" text="HostelFee" />
+                        <TableColumn fx:id="messfee" prefWidth="75.0" text="MessFee" />
+                        <TableColumn fx:id="scholarship" prefWidth="75.0" text="Scholarship" />
+                        <TableColumn fx:id="fine" prefWidth="75.0" text="Fine" />
+                        <TableColumn fx:id="trandetails" prefWidth="75.0" text="TransactionDetails" />
+                        <TableColumn fx:id="tranid" prefWidth="75.0" text="TransactionId" />
+                        <TableColumn fx:id="bankname" prefWidth="75.0" text="BankName" />
+                        <TableColumn fx:id="accountholder" prefWidth="75.0" text="AccountHolder" />
+                        <TableColumn fx:id="remark" prefWidth="75.0" text="Remark" />
+                    </columns>
+                  </TableView>
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
